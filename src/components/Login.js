@@ -3,13 +3,17 @@ import Header from './Header';
 import { checkValidData } from '../utils/validate';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../utils/firebase';
+import { useNavigate } from 'react-router-dom';
+import { updateProfile } from "firebase/auth";
+
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMsg, setErrorMsg] = useState(null);
+    const navigate = useNavigate();
     const email = useRef(null);
     const password = useRef(null);
-    // const name = useRef(null);
+    const name = useRef(null);
 
     const handleButtonClick = () => {
         // Validate the form data
@@ -25,28 +29,36 @@ const Login = () => {
             createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     const user = userCredential.user;
+                    updateProfile(user, {
+                        displayName: name.current.value, photoURL: "https://example.com/jane-q-user/profile.jpg"
+                      }).then(() => {
+                            navigate("/browse");
+                      }).catch((error) => {
+                        setErrorMsg(error.message);
+                      });
                     console.log(user);
-            })
+                })
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
                     setErrorMsg(errorCode + "-" + errorMessage);
-            });
+                });
         }
         else{
             // Sign in Logic
             signInWithEmailAndPassword(auth, email.current.value, password.current.value)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log(user);
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                setErrorMsg(errorMessage + "-" + errorCode);
-            });
-            }
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log(user);
+                    navigate("/browse");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    setErrorMsg(errorMessage + "-" + errorCode);
+                });
         }
+    }
 
     const toggleSignInForm = () => {
         setIsSignInForm(!isSignInForm);
