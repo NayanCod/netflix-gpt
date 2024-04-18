@@ -3,10 +3,10 @@ import { IMG_CDN_URL } from '../utils/constant'
 
 const MovieCard = ({posterPath}) => {
   return (
-    <div className='w-48'>
-        <img className='w-48 pr-3 flex-shrink-0' alt='movie poster' src={IMG_CDN_URL + posterPath}/>
+    <div className=''>
+        <img className='min-w-48 rounded-lg cursor-pointer hover:scale-95 transition-all' alt='movie poster' src={IMG_CDN_URL + posterPath}/>
     </div>
   )
 }
 
-export default MovieCard
+export default MovieCard;
