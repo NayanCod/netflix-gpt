@@ -38,6 +38,9 @@
 - GPT Search Page
 - GPT Search Bar
 - Multi-language feature in our App
+- Individual Movie page built
+- Custom hooks - useRecommendationMovie, useMovieDeatils, useCasts
+- Movie Casts Displayed
 
 
 ...

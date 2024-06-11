@@ -22,15 +22,6 @@ const Browse = () => {
       {
         showGptSearch ? <GptSearch/> : <><MainContainer/><SecondaryContainer/></>
       }
-      
-      {/*
-          MainContainer
-            - VideoBackGround
-            - VideoTitle
-          SecondaryContainer
-            - MovieList * n
-              - cards * n
-       */}
     </div>
   )
 }
