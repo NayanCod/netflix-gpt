@@ -56,6 +56,8 @@
         - Title & Description
         - Movie Suggestions
             - MovieLists * N
+            - Recommended Movies
+            - Casts Listed Below
 - NetflixGPT
     - Search Bar
     - Movie Suggestions
