@@ -50,7 +50,7 @@ const Header = () => {
   }
 
   return (
-    <div className='absolute w-full px-6 bg-gradient-to-b from-black z-20 flex items-center justify-between'>
+    <div className='absolute w-full px-6 bg-gradient-to-b from-black z-20 flex items-center flex-col md:flex-row md:justify-between'>
         <img className='w-44' src={logo} alt='logo'/>
         {
           user && (

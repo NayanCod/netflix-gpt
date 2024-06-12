@@ -7,7 +7,7 @@ import { model } from '../utils/openai';
 
 const GptSearchBar = () => {
     const langKey = useSelector(store=> store.config.lang);
-    const searchtext = useRef(null);
+    const searchtext = useRef();
     const dispatch = useDispatch();
 
     const searchMoviesTMDB = async(movie) => {
@@ -38,9 +38,9 @@ const GptSearchBar = () => {
 
     }
   return (
-    <div className='pt-[10%] w-1/2 mx-auto'>
+    <div className='md:pt-[10%] pt-[35%] md:w-1/2 w-[97%] mx-auto'>
         <form className='bg-black w-full rounded-md' onSubmit={(e)=>e.preventDefault()}>
-            <input ref={searchtext} className='py-2 px-4 m-2 w-[80%] outline-none rounded-md' type='text' placeholder={lang[langKey].gptSearchPlaceholder}/>
+            <input ref={searchtext} className='py-2 px-4 m-2 md:w-[80%] w-[75%] outline-none rounded-md' type='text' placeholder={lang[langKey].gptSearchPlaceholder}/>
             <button className='py-2 px-4 rounded-md bg-red-600 hover:bg-red-700 text-white w-[17%]' onClick={handleGptSearchClick}>{lang[langKey].search}</button>
         </form>
     </div>
