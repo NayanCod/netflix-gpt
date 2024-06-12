@@ -22,7 +22,7 @@ const MoviePage = () => {
     <div className='bg-black'>
         <VideoTitle title={info.original_title} overview={info.overview}/>
         <VideoBackground movieId={movieId}/>
-        <div className='-mt-32 md:-mt-56 relative z-50 md:pl-16 pl-3'>
+        <div className='-mt-11 md:-mt-56 relative z-50 md:pl-16 pl-3'>
           <Casts title="Casts" peoples={casts} />
           <MovieList title="Recommendation" movies={recommendMovie} />
         </div>  
