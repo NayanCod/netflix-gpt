@@ -41,7 +41,7 @@
 - Individual Movie page built
 - Custom hooks - useRecommendationMovie, useMovieDeatils, useCasts
 - Movie Casts Displayed
-
+- Make Responsive for Mobile 
 
 ...
 # Features
