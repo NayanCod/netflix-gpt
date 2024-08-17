@@ -1,5 +1,7 @@
 # Netflix GPT
 
+Here is the hosted url - https://moveenest.netlify.app
+
 - Create React App
 - Configured TailwindCSS
 - Header
