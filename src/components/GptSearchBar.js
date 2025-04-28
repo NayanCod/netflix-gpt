@@ -10,7 +10,7 @@ const GptSearchBar = () => {
     const langKey = useSelector(store=> store.config.lang);
     const searchtext = useRef();
     const dispatch = useDispatch();
-    const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_KEY || "AIzaSyB7IFem0F4r2JqFzk3Ae72ijwRszjhTzEU";
+    const GEMINI_API_KEY = process.env.REACT_APP_GEMINI_KEY;
     const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
     const searchMoviesTMDB = async(movie) => {

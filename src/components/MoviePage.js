@@ -8,6 +8,7 @@ import useRecommendationMovie from '../hooks/useRecommendationMovie';
 import MovieList from './MovieList';
 import useCasts from '../hooks/useCasts';
 import Casts from './Casts';
+import Header from './Header';
 
 const MoviePage = () => {
   const {movieId} = useParams();
@@ -19,7 +20,9 @@ const MoviePage = () => {
   const casts = useSelector(store => store.movies?.casts);
   if(!info) return;
   return (
+    <>
     <div className='bg-black'>
+    {/* <Header /> */}
         <VideoTitle title={info.original_title} overview={info.overview}/>
         <VideoBackground movieId={movieId}/>
         <div className='-mt-11 md:-mt-56 relative z-50 md:pl-16 pl-3'>
@@ -27,6 +30,7 @@ const MoviePage = () => {
           <MovieList title="Recommendation" movies={recommendMovie} />
         </div>  
     </div>
+    </>
   );
 }
 
