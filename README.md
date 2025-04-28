@@ -1,6 +1,6 @@
 # Netflix GPT
 
-Here is the hosted url - https://moveenest.netlify.app
+Hosted on - https://moveenest.netlify.app
 (click on visit unsafe site as they are free services)
 
 - Create React App
