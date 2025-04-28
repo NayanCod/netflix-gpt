@@ -1,6 +1,6 @@
 # Netflix GPT
 
-Hosted on - https://moveenest.netlify.app
+Hosted on - https://netflix-gpt-delta-olive.vercel.app/
 (click on visit unsafe site as they are free services)
 
 - Create React App
